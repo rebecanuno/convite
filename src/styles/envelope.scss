@@ -1,0 +1,206 @@
+.envelope {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(100%, calc((90vh * 210 / 291)));
+  margin-inline: auto;
+  height: 100vh;
+  perspective: 750px;
+  animation: envelope-entering 1s ease-in-out forwards;
+  transform-origin: left top;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @keyframes envelope-entering {
+    from {
+      display: flex;
+      height: 100vh;
+      transform: scale(0) rotateY(180deg) translate(-50%, -50%);
+    }
+    to {
+      display: flex;
+      transform: scale(1) rotateY(180deg) translate(-50%, -50%);
+    }
+  }
+  &:not(.reverse) {
+    animation: envelope-rotate 1.2s ease-in-out forwards;
+    @keyframes envelope-rotate {
+      from {
+        transform: scale(1) rotateY(180deg) translate(-50%, -50%);
+      }
+      to {
+        transform: scale(1) rotateY(0deg) translate(-50%, -50%);
+      }
+    }
+  }
+  & > div {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+      width: 70%;
+    }
+  }
+  &-top {
+    transform-origin: 0 3.3%;
+    transition: all 1.2s ease-in-out, opacity 0s;
+    z-index: 7;
+  }
+  &-seal {
+    transition: all 1.6s ease-in-out 0.4s, opacity 1.2s ease-in-out 0.8s;
+    z-index: 8;
+  }
+  &-body {
+    z-index: 6;
+  }
+  &-back {
+    z-index: 4;
+  }
+  &.opened {
+    .envelope {
+      &-top {
+        animation: openTop 3.4s ease-in-out 1.2s forwards;
+        @keyframes openTop {
+          40% {
+            z-index: 4;
+            transform: translate(-50%, -50%) rotate3d(1, 0, 0, 160deg);
+          }
+          60% {
+            z-index: 4;
+            transform: translate(-50%, -50%) rotate3d(1, 0, 0, 160deg);
+          }
+          100% {
+            transform: translate(0, 0) rotate3d(0deg);
+          }
+        }
+      }
+      &-seal {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+        transition: all 1.6s ease-in-out, opacity 1.2s ease-in-out 0.4s;
+      }
+    }
+    .card {
+      animation: cardToFront 2s ease-in-out 2.5s forwards;
+      @keyframes cardToFront {
+        0% {
+          transform: translateY(0) scale(0.6);
+        }
+        50% {
+          transform: translateY(-100%) scale(0.6);
+          box-shadow: none;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+      }
+      &-container {
+        animation: cardContainerToFront 0s ease-in-out 3.5s forwards;
+        @keyframes cardContainerToFront {
+          0% {
+            z-index: 5;
+          }
+          100% {
+            z-index: 10;
+          }
+        }
+      }
+    }
+  }
+}
+.backface {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(100%, calc((90vh * 210 / 291)));
+  margin-inline: auto;
+
+  perspective: 750px;
+  animation: backface-entering 1s ease-in-out forwards;
+  transform-origin: left top;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @keyframes backface-entering {
+    from {
+      height: 0;
+      opacity: 0;
+      transform: scale(0) rotateY(0deg) translate(-50%, -50%);
+    }
+    to {
+      height: 100vh;
+      opacity: 1;
+      transform: scale(1) rotateY(0deg) translate(-50%, -50%);
+    }
+  }
+  &:not(.reverse) {
+    animation: backface-rotating 1.2s ease-in-out forwards;
+    @keyframes backface-rotating {
+      from {
+        transform: scale(1) rotateY(0deg) translate(-50%, -50%);
+      }
+      to {
+        transform: scale(1) rotateY(-180deg) translate(-50%, -50%);
+      }
+    }
+  }
+  & > img {
+    width: 70%;
+  }
+  .guest {
+    position: absolute;
+    width: 58%;
+    margin-bottom: 40%;
+    color: $color-gray-1;
+    display: flex;
+    flex-direction: column;
+  }
+  svg:first-of-type {
+    margin-bottom: 40%;
+  }
+  .handwrite {
+    display: flex;
+    font-family: $font-secondary;
+    & > div {
+      &:first-of-type {
+        flex: 3;
+      }
+      &:last-of-type {
+        flex: 1;
+      }
+    }
+    img {
+      width: 100%;
+      transform: scale(1.1) translateX(-5%);
+      align-self: center;
+    }
+  }
+  .guest-name {
+    font-size: 16px;
+  }
+  .versiculo {
+    font-size: 10px;
+    margin-top: 5%;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.5;
+  }
+  .referencia {
+    font-size: 10px;
+    font-weight: 600;
+    opacity: 0.6;
+    margin-top: 1%;
+  }
+  &-top {
+    font-weight: 400;
+    letter-spacing: 2px;
+    opacity: 0.5;
+  }
+}

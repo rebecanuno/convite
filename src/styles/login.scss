@@ -1,0 +1,122 @@
+.login {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  animation: scale-entering 1s ease-in-out forwards;
+  transform-origin: center;
+  &.leaving {
+    animation: scale-leaving 1s ease-in-out forwards;
+  }
+  &-image {
+    position: absolute;
+    width: 60% !important;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    &-1 {
+      width: 40% !important;
+      transform: rotateZ(135deg) translate(-43%, 67%);
+    }
+    &-2 {
+      width: 50% !important;
+      transform: rotateZ(-30deg) rotateX(180deg) translate(-27%, 63%);
+    }
+    &-3 {
+      transform: rotateZ(-45deg) translate(30%, 88%);
+    }
+    &-4 {
+      transform: rotateZ(105deg) rotateX(180deg) translate(-22%, 104%);
+    }
+  }
+  &-form {
+    position: relative;
+    background-color: rgba($color-white, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 50px 64px;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(94% - 8px);
+      height: calc(90% - 3px);
+      border-width: 4px;
+      border-style: solid;
+      border-image: $color-gold 1;
+      margin: 3%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    input {
+      padding: 12px 8px 8px;
+      border-radius: 4px;
+      color: $color-gray-3;
+      width: calc(100% - 16px);
+      font-size: 16px;
+      background-color: $color-white;
+      text-align: center;
+      &::placeholder {
+        color: $color-gray-2;
+      }
+    }
+    button {
+      margin-top: 10%;
+      background-color: $color-primary;
+      color: $color-white;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 12px 32px 10px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      max-width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 7px 14px, rgba(0, 0, 0, 0.22) 0px 5px 5px;
+      height: 20px;
+      width: 64px;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 80%;
+        left: -130%;
+        background-color: $color-white;
+        opacity: 1;
+        border-radius: 50%;
+      }
+      &:hover {
+        box-shadow: none;
+        &::after {
+          top: -150%;
+          left: -50%;
+          transition: all 0.5s ease-in-out, opacity 1s ease-in-out;
+          opacity: 0;
+        }
+      }
+    }
+    &__error {
+      padding-top: 10%;
+      height: 16px;
+      color: $color-error;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .login {
+    &-form {
+      input {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.loading {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.half-circle {
+  height: 11px;
+  width: 22px;
+  border-radius: 100px 100px 0px 0px;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(255, 255, 255));
+  position: relative;
+  animation: linear myRotate 1s infinite;
+  transform-origin: 50% 100%;
+}
+
+.cover {
+  height: 20px;
+  width: 20px;
+  background: $color-primary;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes myRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

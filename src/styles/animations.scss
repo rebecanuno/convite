@@ -1,0 +1,116 @@
+@keyframes anim-bigger {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes anim-letter-rotate {
+  0% {
+    transform: rotateX(0deg);
+  }
+  5% {
+    transform: rotateX(180deg);
+  }
+  10% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes anim-letter-rotate2 {
+  0% {
+    transform: rotateX(0deg);
+  }
+  11% {
+    transform: rotateX(0deg);
+  }
+  16% {
+    transform: rotateX(180deg);
+  }
+  21% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes anim-jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-entering {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-leaving {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@mixin delTrans($num, $div) {
+  span {
+    @for $i from 1 through $num {
+      &:nth-child(#{$i}) {
+        animation-delay: calc($i / $div) + 0s;
+      }
+    }
+  }
+}
+
+.word1 {
+  @include delTrans(12, 15);
+  span {
+    display: inline-block;
+    animation: anim-letter-rotate 10s linear 1s infinite;
+  }
+}
+
+.word2 {
+  @include delTrans(12, 15);
+  span {
+    min-width: 0.5ch;
+    display: inline-block;
+    animation: anim-letter-rotate2 10s linear 1s infinite;
+  }
+}
+
+.word3,
+.word4 {
+  user-select: none;
+  cursor: pointer;
+  span {
+    min-width: 0.5ch;
+    display: inline-block;
+    pointer-events: none;
+    &.active {
+      animation-name: anim-jump;
+      animation-duration: 0.5s;
+    }
+  }
+}

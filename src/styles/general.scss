@@ -1,0 +1,72 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: $font-primary;
+}
+.wrapper {
+  padding-inline: 1rem;
+  max-width: 61.25rem;
+  height: 100vh;
+  margin-inline: auto;
+  overflow: hidden;
+  perspective: 800px;
+}
+svg {
+  overflow: visible;
+}
+foreignObject {
+  overflow: visible;
+  transform: translate(-50%, -50%);
+}
+a {
+  color: inherit;
+}
+.background {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #999;
+    opacity: 0.2;
+    z-index: 1;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+}
+.bg-polygon {
+  position: absolute;
+  width: 100% !important;
+  height: 250%;
+  top: 35%;
+  left: 0;
+  z-index: -1;
+  filter: invert(42%) sepia(13%) saturate(1743%) hue-rotate(10deg) brightness(95%) contrast(92%);
+}
+.bg-polygon-1 {
+  transform: translate(-120%, -50%);
+  transition: transform 0.6s ease-out;
+}
+.bg-polygon-2 {
+  transform: translate(120%, -50%) rotateY(180deg);
+  transition: transform 0.6s ease-out 0.3s;
+}
+input {
+  all: unset;
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
