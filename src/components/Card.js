@@ -158,7 +158,7 @@ export const Card = () => {
                   {"CONFIRME A SUA PRESENÇA ATÉ ".split("").map((char, index) => {
                     return <span key={index}>{char}</span>;
                   })}
-                  {"08/04/2023".split("").map((char, index) => {
+                  {"19/04/2023".split("").map((char, index) => {
                     return (
                       <span key={index}>
                         <strong>{char}</strong>
