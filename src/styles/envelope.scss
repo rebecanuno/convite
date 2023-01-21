@@ -3,7 +3,7 @@
   top: 50%;
   left: 50%;
   width: min(100%, calc((90vh * 210 / 291)));
-  margin-inline: auto;
+  margin: auto;
   height: 100vh;
   perspective: 750px;
   animation: envelope-entering 1s ease-in-out forwards;
@@ -119,8 +119,7 @@
   top: 50%;
   left: 50%;
   width: min(100%, calc((90vh * 210 / 291)));
-  margin-inline: auto;
-
+  margin: auto;
   perspective: 750px;
   animation: backface-entering 1s ease-in-out forwards;
   transform-origin: left top;
@@ -202,5 +201,49 @@
     font-weight: 400;
     letter-spacing: 2px;
     opacity: 0.5;
+  }
+}
+
+.click-info {
+  position: absolute;
+  bottom: 7vh;
+  left: 50%;
+  z-index: -1;
+  animation: info-entering 1s ease-in-out forwards;
+  @keyframes info-entering {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  div {
+    text-align: center;
+    font-size: 12px;
+    color: $color-white;
+    background-color: rgba($color-primary, 0.75);
+    white-space: nowrap;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 300;
+    animation: info-anim 4s ease-in-out infinite;
+    @keyframes info-anim {
+      0% {
+        opacity: 0.75;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 0.75;
+        transform: scale(1);
+      }
+    }
   }
 }

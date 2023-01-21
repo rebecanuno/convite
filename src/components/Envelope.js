@@ -35,7 +35,7 @@ export const Envelope = (props) => {
       <div className={`backface ${reverse ? "reverse" : ""}`} ref={backRef}>
         <img src={envelopeBack} alt="" />
         <div className="guest">
-          <Text viewBox="0 0 600 60" h={"10%"}>
+          <Text viewBox="0 0 600 60">
             <div className="backface-top">Convite de casamento</div>
           </Text>
           <Text viewBox="0 0 275 60">
@@ -68,6 +68,9 @@ export const Envelope = (props) => {
           <img src={Seal} alt="" />
         </div>
         {isOpen && <Card />}
+      </div>
+      <div className="click-info">
+        <div>Clique para continuar!</div>
       </div>
     </div>
   );
