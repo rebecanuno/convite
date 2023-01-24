@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Card } from "./Card";
-import { Text } from "./Text";
 import envelopeBack from "../assets/images/envelope-back.svg";
 import envelopeBody from "../assets/images/envelope-body.svg";
 import envelopeTop from "../assets/images/envelope-top.svg";
 import Seal from "../assets/images/seal.svg";
-import leaves from "../assets/images/leaves.png";
+import { ReactComponent as Backface } from "../assets/images/backface.svg";
 
 export const Envelope = (props) => {
   const compRef = useRef(null);
@@ -23,6 +22,18 @@ export const Envelope = (props) => {
   };
 
   useEffect(() => {
+    const guestElement = document.getElementById("convidado").querySelector("tspan");
+    if (guestElement) guestElement.innerHTML = props.user.name;
+
+    const versElements = document.getElementById("versiculo").querySelectorAll("tspan");
+    if (versElements) {
+      versElements[0].innerHTML = '"Assim, eles já não são dois, mas sim uma';
+      versElements[1].innerHTML = "só carne. Portanto, o que Deus uniu,";
+      versElements[2].innerHTML = 'ninguém separe"';
+    }
+  }, []);
+
+  useEffect(() => {
     if (!isOpen) {
       window.addEventListener("mouseup", handleEnvelopeClick);
       return () => window.removeEventListener("mouseup", handleEnvelopeClick);
@@ -33,26 +44,7 @@ export const Envelope = (props) => {
   return (
     <div>
       <div className={`backface ${reverse ? "reverse" : ""}`} ref={backRef}>
-        <img src={envelopeBack} alt="" />
-        <div className="guest">
-          <Text viewBox="0 0 600 60">
-            <div className="backface-top">Convite de casamento</div>
-          </Text>
-          <Text viewBox="0 0 275 60">
-            <div className="handwrite">
-              <div>
-                <div className="guest-name">{props.user.name}</div>
-                <div className="versiculo">
-                  "Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu, ninguém separe"
-                </div>
-                <div className="referencia">Mateus 19.6</div>
-              </div>
-              <div>
-                <img src={leaves} alt="" />
-              </div>
-            </div>
-          </Text>
-        </div>
+        <Backface />
       </div>
       <div ref={compRef} className={`envelope ${reverse ? "reverse" : ""} ${isOpen ? "opened" : ""}`}>
         <div className="envelope-back">

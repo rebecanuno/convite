@@ -9,11 +9,11 @@ export const App = () => {
   const [isAuthenticate, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState();
 
-  console.log(SHA256("256552"));
+  // console.log(SHA256("256552"));
 
   useEffect(() => {
-    // const userToken = localStorage.getItem("userToken");
-    const userToken = null;
+    const userToken = localStorage.getItem("userToken");
+    // const userToken = null;
     if (!user) {
       if (userToken !== null) setUser(data.filter((d) => d.id === userToken)[0]);
     } else {
