@@ -34,11 +34,11 @@
 <g id="confirmPresence">
 <text fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Josefin Sans" font-size="9" font-weight="300" letter-spacing="0.05em"><tspan x="103.585" y="470.75">CONFIRME A SUA PRESENÇA ATÉ </tspan></text>
 <text fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Josefin Sans" font-size="9" letter-spacing="0.05em"><tspan x="267.11" y="470.75">19/04/2023</tspan></text>
-</g>
+</g>g
 <path id="invitePath">
 		<animate attributeName="d" from="m68.3203,207.5 h0" to="m68.3203,207.5 h5000" dur="58.8s" begin="0s" repeatCount="indefinite"/>
 	</path>
-<text id="invite" fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Josefin Sans" font-size="10" font-weight="300" letter-spacing="0em"><textPath xlink:href="#invitePath" x="68.3203" y="207.5">CONVIDAM PARA CELEBRAR O SEU CASAMENTO, NO DIA</textPath></text>
+<text id="invite" fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Josefin Sans" font-size="10" font-weight="300" letter-spacing="0em"><tspan x="68.3203" y="207.5">CONVIDAM PARA CELEBRAR O SEU CASAMENTO, NO DIA</tspan></text>
 <g id="noivo">
 <text fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Josefin Sans" font-size="9" letter-spacing="0.05em" text-decoration="underline"><tspan x="114.864" y="529.75"><a href="tel:912255646">912 255 646</a></tspan></text>
 <text fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Josefin Sans" font-size="9" letter-spacing="0.05em" text-decoration="underline"><tspan x="83.2897" y="529.75"><a href="tel:912255646">Noivo: </a></tspan></text>
