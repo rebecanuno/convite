@@ -22,7 +22,7 @@
 <rect id="weekLine1" x="44" y="286" width="122" height="1" fill="#7E6D2A"/>
 </g>
 <g id="Hour">
-<text id="hourText" fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Quicksand" font-size="20" font-weight="500" letter-spacing="0em"><tspan x="253.184" y="306">PELAS 14:30H</tspan></text>
+<text id="hourText" fill="#7E6D2A" xml:space="preserve" style="white-space: pre" font-family="Quicksand" font-size="20" font-weight="500" letter-spacing="0.1em"><tspan x="262.293" y="306">ÀS 14:30H</tspan></text>
 <rect id="hourLine2" x="254" y="310" width="122" height="1" fill="#7E6D2A"/>
 <rect id="hourLine1" x="254" y="286" width="122" height="1" fill="#7E6D2A"/>
 </g>

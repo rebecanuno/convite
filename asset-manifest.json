@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/convite/static/css/main.f2ad946c.css",
-    "main.js": "/convite/static/js/main.95c66933.js",
+    "main.js": "/convite/static/js/main.e0cb10d8.js",
     "static/js/787.ecf9c196.chunk.js": "/convite/static/js/787.ecf9c196.chunk.js",
     "static/media/background.jpg": "/convite/static/media/background.99da8e5c15292d34cf29.jpg",
     "static/media/backface.svg": "/convite/static/media/backface.eb0e55f7d141823ed15b8787d7c3aa4e.svg",
     "static/media/envelope-back.svg": "/convite/static/media/envelope-back.0676437953269158f019d132476263ab.svg",
     "static/media/envelope-body.svg": "/convite/static/media/envelope-body.067f63aeb626632855aff1d4d2669ffc.svg",
     "static/media/envelope-top.svg": "/convite/static/media/envelope-top.06982d85aa731d963b4c4faf4543ff37.svg",
-    "static/media/invite.svg": "/convite/static/media/invite.d915f2de9af41f4afa847538ea0cfedb.svg",
+    "static/media/invite.svg": "/convite/static/media/invite.b90f1381ab823f5dcd97494747f14e43.svg",
     "static/media/leaves.png": "/convite/static/media/leaves.59d4a5b473f33a55c19a.png",
     "static/media/seal.svg": "/convite/static/media/seal.49688282598a0e36772e4ac815927086.svg",
     "index.html": "/convite/index.html",
     "main.f2ad946c.css.map": "/convite/static/css/main.f2ad946c.css.map",
-    "main.95c66933.js.map": "/convite/static/js/main.95c66933.js.map",
+    "main.e0cb10d8.js.map": "/convite/static/js/main.e0cb10d8.js.map",
     "787.ecf9c196.chunk.js.map": "/convite/static/js/787.ecf9c196.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f2ad946c.css",
-    "static/js/main.95c66933.js"
+    "static/js/main.e0cb10d8.js"
   ]
 }
