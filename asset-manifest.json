@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/convite/static/css/main.2b738dfe.css",
-    "main.js": "/convite/static/js/main.54f3fd75.js",
+    "main.css": "/convite/static/css/main.f2ad946c.css",
+    "main.js": "/convite/static/js/main.95c66933.js",
     "static/js/787.ecf9c196.chunk.js": "/convite/static/js/787.ecf9c196.chunk.js",
     "static/media/background.jpg": "/convite/static/media/background.99da8e5c15292d34cf29.jpg",
     "static/media/backface.svg": "/convite/static/media/backface.eb0e55f7d141823ed15b8787d7c3aa4e.svg",
@@ -12,12 +12,12 @@
     "static/media/leaves.png": "/convite/static/media/leaves.59d4a5b473f33a55c19a.png",
     "static/media/seal.svg": "/convite/static/media/seal.49688282598a0e36772e4ac815927086.svg",
     "index.html": "/convite/index.html",
-    "main.2b738dfe.css.map": "/convite/static/css/main.2b738dfe.css.map",
-    "main.54f3fd75.js.map": "/convite/static/js/main.54f3fd75.js.map",
+    "main.f2ad946c.css.map": "/convite/static/css/main.f2ad946c.css.map",
+    "main.95c66933.js.map": "/convite/static/js/main.95c66933.js.map",
     "787.ecf9c196.chunk.js.map": "/convite/static/js/787.ecf9c196.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b738dfe.css",
-    "static/js/main.54f3fd75.js"
+    "static/css/main.f2ad946c.css",
+    "static/js/main.95c66933.js"
   ]
 }
