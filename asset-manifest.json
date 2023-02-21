@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/convite/static/css/main.4c86ead4.css",
+    "main.css": "/convite/static/css/main.1f59a6ee.css",
     "main.js": "/convite/static/js/main.a3c9da4b.js",
     "static/js/787.ecf9c196.chunk.js": "/convite/static/js/787.ecf9c196.chunk.js",
     "static/media/background.jpg": "/convite/static/media/background.99da8e5c15292d34cf29.jpg",
@@ -12,12 +12,12 @@
     "static/media/leaves.png": "/convite/static/media/leaves.59d4a5b473f33a55c19a.png",
     "static/media/seal.svg": "/convite/static/media/seal.49688282598a0e36772e4ac815927086.svg",
     "index.html": "/convite/index.html",
-    "main.4c86ead4.css.map": "/convite/static/css/main.4c86ead4.css.map",
+    "main.1f59a6ee.css.map": "/convite/static/css/main.1f59a6ee.css.map",
     "main.a3c9da4b.js.map": "/convite/static/js/main.a3c9da4b.js.map",
     "787.ecf9c196.chunk.js.map": "/convite/static/js/787.ecf9c196.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c86ead4.css",
+    "static/css/main.1f59a6ee.css",
     "static/js/main.a3c9da4b.js"
   ]
 }
