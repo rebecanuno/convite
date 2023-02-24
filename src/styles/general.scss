@@ -46,23 +46,6 @@ a {
     height: 100%;
   }
 }
-.bg-polygon {
-  position: absolute;
-  width: 100% !important;
-  height: 250%;
-  top: 35%;
-  left: 0;
-  z-index: -1;
-  filter: invert(42%) sepia(13%) saturate(1743%) hue-rotate(10deg) brightness(95%) contrast(92%);
-}
-.bg-polygon-1 {
-  transform: translate(-120%, -50%);
-  transition: transform 0.6s ease-out;
-}
-.bg-polygon-2 {
-  transform: translate(120%, -50%) rotateY(180deg);
-  transition: transform 0.6s ease-out 0.3s;
-}
 input {
   all: unset;
 }

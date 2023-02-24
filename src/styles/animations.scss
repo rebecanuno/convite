@@ -73,44 +73,38 @@
   }
 }
 
-@mixin delTrans($num, $div) {
-  span {
-    @for $i from 1 through $num {
-      &:nth-child(#{$i}) {
-        animation-delay: calc($i / $div) + 0s;
-      }
-    }
+@keyframes stroke {
+  0% {
+    fill: rgba(#7e6d2a, 1);
+    stroke: rgba(#7e6d2a, 1);
   }
-}
-
-.word1 {
-  @include delTrans(12, 15);
-  span {
-    display: inline-block;
-    animation: anim-letter-rotate 10s linear 1s infinite;
+  80% {
+    fill: rgba(#7e6d2a, 1);
+    stroke: rgba(#7e6d2a, 1);
   }
-}
-
-.word2 {
-  @include delTrans(12, 15);
-  span {
-    min-width: 0.5ch;
-    display: inline-block;
-    animation: anim-letter-rotate2 10s linear 1s infinite;
+  81% {
+    fill: rgba(#7e6d2a, 0);
+    stroke: rgba(#7e6d2a, 1);
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 20% 0%;
+    stroke-width: 0.25;
   }
-}
-
-.word3,
-.word4 {
-  user-select: none;
-  cursor: pointer;
-  span {
-    min-width: 0.5ch;
-    display: inline-block;
-    pointer-events: none;
-    &.active {
-      animation-name: anim-jump;
-      animation-duration: 0.5s;
-    }
+  90% {
+    fill: rgba(#7e6d2a, 0);
+    stroke: rgba(#7e6d2a, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0% 20%;
+    stroke-width: 0.25;
+  }
+  99% {
+    fill: rgba(#7e6d2a, 0);
+    stroke: rgba(#7e6d2a, 1);
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 20% 0%;
+    stroke-width: 0.25;
+  }
+  100% {
+    fill: rgba(#7e6d2a, 1);
+    stroke: rgba(#7e6d2a, 1);
   }
 }

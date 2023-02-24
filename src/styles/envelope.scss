@@ -12,6 +12,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  &-wrapper {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    z-index: 7;
+    &--back {
+      z-index: 4;
+    }
+  }
   @keyframes envelope-entering {
     from {
       display: flex;
@@ -34,7 +41,8 @@
       }
     }
   }
-  & > div {
+  & > div,
+  &-top {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -42,12 +50,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    &.card-container {
+      transform: scale(0.6);
+    }
     img {
       width: 70%;
     }
   }
   &-top {
     transform-origin: 0 3.3%;
+    transform-box: fill-box;
+    transform-style: flat;
     transition: all 1.2s ease-in-out, opacity 0s;
     z-index: 7;
   }
@@ -64,52 +77,27 @@
   &.opened {
     .envelope {
       &-top {
-        animation: openTop 3.4s ease-in-out 1.2s forwards;
+        animation: openTop 1.3s ease-in-out 1.2s forwards;
+        -webkit-transform: translate(-50%, -50%) rotateX(0deg);
+        transform: translate(-50%, -50%) rotateX(0deg);
         @keyframes openTop {
-          40% {
-            z-index: 4;
-            transform: translate(-50%, -50%) rotate3d(1, 0, 0, 160deg);
-          }
-          60% {
-            z-index: 4;
-            transform: translate(-50%, -50%) rotate3d(1, 0, 0, 160deg);
+          0% {
+            -webkit-transform: translate(-50%, -50%) rotateX(0deg);
+            transform: translate(-50%, -50%) rotateX(0deg);
           }
           100% {
-            transform: translate(0, 0) rotate3d(0deg);
+            -webkit-transform: translate(-50%, -50%) rotateX(160deg);
+            transform: translate(-50%, -50%) rotateX(160deg);
           }
+        }
+        &--back {
+          z-index: 3;
         }
       }
       &-seal {
         transform: translate(-50%, -50%) scale(2);
         opacity: 0;
         transition: all 1.6s ease-in-out, opacity 1.2s ease-in-out 0.4s;
-      }
-    }
-    .card {
-      animation: cardToFront 2s ease-in-out 2.5s forwards;
-      @keyframes cardToFront {
-        0% {
-          transform: translateY(0) scale(0.6);
-        }
-        50% {
-          transform: translateY(-100%) scale(0.6);
-          box-shadow: none;
-        }
-        100% {
-          transform: translateY(0) scale(1);
-          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-        }
-      }
-      &-container {
-        animation: cardContainerToFront 0s ease-in-out 3.5s forwards;
-        @keyframes cardContainerToFront {
-          0% {
-            z-index: 5;
-          }
-          100% {
-            z-index: 10;
-          }
-        }
       }
     }
   }
@@ -120,39 +108,42 @@
   left: 50%;
   width: min(100%, calc((90vh * 210 / 291)));
   margin: auto;
-  perspective: 750px;
-  animation: backface-entering 1s ease-in-out forwards;
-  transform-origin: left top;
-  backface-visibility: hidden;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  @keyframes backface-entering {
-    from {
-      height: 0;
-      opacity: 0;
-      transform: scale(0) rotateY(0deg) translate(-50%, -50%);
-    }
-    to {
-      height: 100vh;
-      opacity: 1;
-      transform: scale(1) rotateY(0deg) translate(-50%, -50%);
-    }
-  }
-  &:not(.reverse) {
-    animation: backface-rotating 1.2s ease-in-out forwards;
-    @keyframes backface-rotating {
-      from {
-        transform: scale(1) rotateY(0deg) translate(-50%, -50%);
-      }
-      to {
-        transform: scale(1) rotateY(-180deg) translate(-50%, -50%);
-      }
-    }
-  }
   svg {
+    position: relative;
+    z-index: 1;
+    animation: backface-entering 1s ease-in-out forwards;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    backface-visibility: hidden;
     width: 70%;
     height: 70%;
+    perspective: 750px;
+    @keyframes backface-entering {
+      from {
+        opacity: 0;
+        transform: scale(0) rotateY(0deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+      }
+    }
+  }
+  &:not(.reverse) svg {
+    animation: backface-rotating 1.2s ease-in-out forwards;
+    backface-visibility: hidden;
+    @keyframes backface-rotating {
+      from {
+        transform: scale(1) rotateY(0deg);
+      }
+      to {
+        transform: scale(1) rotateY(-180deg);
+      }
+    }
   }
   #versiculo {
     font-style: italic;
@@ -174,6 +165,10 @@
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
+  }
+  &--hidden {
+    transition: all 1s ease-in-out !important;
+    opacity: 0 !important;
   }
   div {
     text-align: center;

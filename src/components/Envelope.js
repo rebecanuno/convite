@@ -12,6 +12,7 @@ export const Envelope = (props) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [reverse, setReverse] = useState(true);
+  const [topBack, setTopBack] = useState(false);
 
   const handleEnvelopeClick = () => {
     if (reverse) {
@@ -22,24 +23,29 @@ export const Envelope = (props) => {
   };
 
   useEffect(() => {
-    const guestElement = document.getElementById("convidado").querySelector("tspan");
-    if (guestElement) guestElement.innerHTML = props.user.name;
-
-    const versElements = document.getElementById("versiculo").querySelectorAll("tspan");
-    if (versElements) {
-      versElements[0].innerHTML = '"Assim, eles já não são dois, mas sim uma';
-      versElements[1].innerHTML = "só carne. Portanto, o que Deus uniu,";
-      versElements[2].innerHTML = 'ninguém separe"';
-    }
+    const guestElement = document.getElementById("convidado");
+    if (guestElement) guestElement.textContent = props.user.name;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (!isOpen) {
       window.addEventListener("mouseup", handleEnvelopeClick);
       return () => window.removeEventListener("mouseup", handleEnvelopeClick);
+    } else {
+      setTimeout(() => {
+        setTopBack(true);
+      }, 2500);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reverse, isOpen]);
+
+  useEffect(() => {
+    if (topBack)
+      setTimeout(() => {
+        setTopBack(true);
+      }, 1500);
+  }, [topBack]);
 
   return (
     <div>
@@ -53,15 +59,17 @@ export const Envelope = (props) => {
         <div className="envelope-body">
           <img src={envelopeBody} alt="" />
         </div>
-        <div className="envelope-top">
-          <img src={envelopeTop} alt="" />
+        <div className={`envelope-wrapper ${topBack ? "envelope-wrapper--back" : ""}`}>
+          <div className={`envelope-top ${topBack ? "envelope-top--back" : ""}`}>
+            <img src={envelopeTop} alt="" />
+          </div>
         </div>
         <div className="envelope-seal">
           <img src={Seal} alt="" />
         </div>
         {isOpen && <Card />}
       </div>
-      <div className="click-info">
+      <div className={`click-info ${isOpen ? "click-info--hidden" : ""}`}>
         <div>Clique para continuar!</div>
       </div>
     </div>
